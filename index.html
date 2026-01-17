@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Akshdeep Singh - Cloud-Native Backend Engineer specializing in Python, AWS, Azure, Docker, and Kubernetes. Building scalable backends and automating the cloud.">
+    <meta name="keywords" content="Backend Engineer, Cloud Engineer, DevOps, Python, AWS, Azure, Docker, Kubernetes">
+    <meta name="author" content="Akshdeep Singh">
+    <title>Akshdeep Singh | Cloud-Native Backend Engineer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-blue': '#00d4ff',
+                        'cyber-purple': '#b84dff',
+                        'dark-bg': '#0a0a0a',
+                        'dark-card': '#1a1a1a',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Orbitron', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark-bg text-gray-100 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-bg/80 backdrop-blur-lg border-b border-cyber-blue/20 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home"
+                        class="text-2xl font-display font-bold bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                        AS
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home"
+                        class="nav-link text-gray-300 hover:text-cyber-blue transition-colors duration-300">Home</a>
+                    <a href="#terminal"
+                        class="nav-link text-gray-300 hover:text-cyber-blue transition-colors duration-300">Terminal</a>
+                    <a href="#about"
+                        class="nav-link text-gray-300 hover:text-cyber-blue transition-colors duration-300">About</a>
+                    <a href="#skills"
+                        class="nav-link text-gray-300 hover:text-cyber-blue transition-colors duration-300">Skills</a>
+                    <a href="#projects"
+                        class="nav-link text-gray-300 hover:text-cyber-blue transition-colors duration-300">Projects</a>
+                    <a href="#contact"
+                        class="nav-link text-gray-300 hover:text-cyber-blue transition-colors duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-cyber-blue focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card/95 backdrop-blur-lg border-t border-cyber-blue/20">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home"
+                    class="block px-3 py-2 text-gray-300 hover:text-cyber-blue hover:bg-cyber-blue/10 rounded transition-colors duration-300">Home</a>
+                <a href="#terminal"
+                    class="block px-3 py-2 text-gray-300 hover:text-cyber-blue hover:bg-cyber-blue/10 rounded transition-colors duration-300">Terminal</a>
+                <a href="#about"
+                    class="block px-3 py-2 text-gray-300 hover:text-cyber-blue hover:bg-cyber-blue/10 rounded transition-colors duration-300">About</a>
+                <a href="#skills"
+                    class="block px-3 py-2 text-gray-300 hover:text-cyber-blue hover:bg-cyber-blue/10 rounded transition-colors duration-300">Skills</a>
+                <a href="#projects"
+                    class="block px-3 py-2 text-gray-300 hover:text-cyber-blue hover:bg-cyber-blue/10 rounded transition-colors duration-300">Projects</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-gray-300 hover:text-cyber-blue hover:bg-cyber-blue/10 rounded transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Second Background for Crossfade -->
+        <div class="bg-transition"></div>
+
+        <!-- Animated Background -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="cyber-grid"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-purple/10 rounded-full blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
+                    <span
+                        class="bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-blue bg-clip-text text-transparent animate-gradient">
+                        Building Scalable Backends
+                    </span>
+                    <br>
+                    <span
+                        class="bg-gradient-to-r from-cyber-purple via-cyber-blue to-cyber-purple bg-clip-text text-transparent animate-gradient"
+                        style="animation-delay: 0.5s;">
+                        & Automating the Cloud
+                    </span>
+                </h1>
+
+                <p class="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                    Hi, I'm <span class="text-cyber-blue font-semibold">Akshdeep Singh</span>.
+                    I bridge the gap between complex backend logic and reliable cloud infrastructure.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" id="view-projects-btn"
+                        class="group relative px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-blue/50">
+                        <span class="relative z-10">View Projects</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-cyber-purple to-cyber-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </a>
+
+                    <a href="Akshdeep-.pdf" download="Akshdeep_Singh_Resume.pdf" id="download-resume-btn"
+                        class="group px-8 py-4 border-2 border-cyber-blue rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-cyber-blue/10 hover:scale-105 hover:shadow-lg hover:shadow-cyber-blue/30">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-cyber-blue">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="py-20 relative bg-dark-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold text-center mb-8">
+                <span class="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                    Interactive Terminal
+                </span>
+            </h2>
+            <p class="text-center text-gray-400 mb-8">Type <span class="text-cyber-blue font-mono">help</span> to see
+                available commands</p>
+
+            <div class="terminal-container glass-card rounded-2xl overflow-hidden">
+                <!-- Terminal Header -->
+                <div
+                    class="terminal-header bg-dark-card/90 px-4 py-3 flex items-center justify-between border-b border-cyber-blue/30">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-sm text-gray-400 font-mono">akshdeep@portfolio:~$</div>
+                    <div class="w-16"></div>
+                </div>
+
+                <!-- Terminal Body -->
+                <div
+                    class="terminal-body bg-dark-card/60 p-6 font-mono text-sm min-h-[400px] max-h-[500px] overflow-y-auto">
+                    <div id="terminal-output">
+                        <div class="text-cyber-blue mb-4">
+                            <span class="text-cyber-purple">Welcome to Akshdeep's Portfolio Terminal v1.0</span><br>
+                            <span class="text-gray-400">Type 'help' to see available commands.</span>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Input Line -->
+                    <div class="terminal-input-line flex items-center gap-2">
+                        <span class="text-cyber-blue">visitor@portfolio:~$</span>
+                        <input type="text" id="terminal-input"
+                            class="flex-1 bg-transparent border-none outline-none text-gray-100 font-mono"
+                            autocomplete="off" spellcheck="false" autofocus />
+                        <span class="terminal-cursor">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                    About Me
+                </span>
+            </h2>
+
+            <div class="glass-card p-8 sm:p-12 rounded-2xl max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-cyber-blue to-cyber-purple p-1">
+                            <div class="w-full h-full rounded-full bg-dark-card flex items-center justify-center">
+                                <i class="fas fa-user-astronaut text-6xl text-cyber-blue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold mb-4 text-cyber-blue">Cloud-Native Backend Engineer</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            I'm currently pursuing my <span class="text-cyber-purple font-semibold">MCA at Chandigarh
+                                University</span>,
+                            where I'm honing my skills in building robust, scalable backend systems and deploying them
+                            on modern cloud infrastructure.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            My core focus lies in <span class="text-cyber-blue font-semibold">Python development</span>,
+                            <span class="text-cyber-purple font-semibold">Backend Engineering</span>, and
+                            <span class="text-cyber-blue font-semibold">DevOps fundamentals</span>.
+                            I specialize in leveraging cloud platforms like AWS and Azure, containerization with Docker,
+                            orchestration with Kubernetes, and implementing CI/CD pipelines with Jenkins.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            I'm passionate about creating efficient, maintainable code and automating infrastructure to
+                            deliver
+                            reliable solutions that scale. Whether it's architecting microservices, optimizing database
+                            queries,
+                            or setting up automated deployment pipelines, I thrive on solving complex technical
+                            challenges.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                    Technical Skills
+                </span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Languages -->
+                <div class="skill-category glass-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-3xl text-cyber-blue mr-3"></i>
+                        <h3 class="text-xl font-bold text-cyber-blue">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category glass-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-server text-3xl text-cyber-purple mr-3"></i>
+                        <h3 class="text-xl font-bold text-cyber-purple">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-category glass-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cloud text-3xl text-cyber-blue mr-3"></i>
+                        <h3 class="text-xl font-bold text-cyber-blue">Cloud & DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category glass-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-3xl text-cyber-purple mr-3"></i>
+                        <h3 class="text-xl font-bold text-cyber-purple">Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                    Featured Projects
+                </span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1: Real-time Translator -->
+                <div class="project-card glass-card p-8 rounded-2xl opacity-0 transform translate-y-8">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-language text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">TalkEase</h3>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        A real-time language translation application built with Python and Streamlit,
+                        deployed on Azure Kubernetes Service (AKS) for high availability and scalability.
+                        Enables instant translation across multiple languages with a responsive web interface.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">Python</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">Streamlit</span>
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">Azure</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">Kubernetes</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="https://github.com/AKSHDEEPsingh0/TalkEase"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Resume Analyzer -->
+                <div class="project-card glass-card p-8 rounded-2xl opacity-0 transform translate-y-8">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-cyber-purple to-cyber-blue rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-file-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">AI Resume Analyzer</h3>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        A powerful resume analysis tool built with AI technology to help job seekers perfect their
+                        resumes.
+                        Features intelligent parsing, keyword optimization, and actionable feedback using advanced
+                        machine learning algorithms. Built with React frontend and Flask backend.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">React</span>
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">Flask</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">Python</span>
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">AI/ML</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">TypeScript</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="https://github.com/AKSHDEEPsingh0/Ai-resumeanalyzer"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Real-Time Collaborative Code Editor -->
+                <div class="project-card glass-card p-8 rounded-2xl opacity-0 transform translate-y-8">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Real-Time Collaborative Code Editor</h3>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        A collaborative coding platform built with Node.js and Socket.IO, enabling multiple developers
+                        to write and edit code simultaneously with low-latency real-time synchronization.
+                        Features syntax highlighting and multi-user cursor tracking.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">Node.js</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">Socket.IO</span>
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">WebSockets</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">Real-time</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="https://github.com/AKSHDEEPsingh0/Real-Time-Collaborative-Code-Editor"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: E-Learning Platform -->
+                <div class="project-card glass-card p-8 rounded-2xl opacity-0 transform translate-y-8">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-cyber-purple to-cyber-blue rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">E-Learning Platform</h3>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        A full-stack e-learning platform built with the MERN stack (MongoDB, Express, React, Node.js).
+                        Implements JWT authentication for secure user sessions, course management, video streaming,
+                        and progress tracking for students and instructors.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">MongoDB</span>
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">Express</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">React</span>
+                        <span class="tech-badge bg-cyber-blue/20 text-cyber-blue">Node.js</span>
+                        <span class="tech-badge bg-cyber-purple/20 text-cyber-purple">JWT</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="https://github.com/AKSHDEEPsingh0/E-Learning-Platform"
+                            class="project-link text-cyber-blue hover:text-cyber-purple transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certifications Section -->
+    <section id="achievements" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                    Achievements & Certifications
+                </span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- AWS Certification -->
+                <div class="achievement-card glass-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-lg flex items-center justify-center mr-4">
+                            <i class="fab fa-aws text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyber-blue">AWS Certified</h3>
+                            <p class="text-gray-400">Cloud Practitioner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Validated expertise in AWS Cloud fundamentals, including core services,
+                        security, architecture, pricing, and support.
+                    </p>
+                </div>
+
+                <!-- SAP Hackathon -->
+                <div class="achievement-card glass-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-cyber-purple to-cyber-blue rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-trophy text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyber-purple">SAP Hackathon</h3>
+                            <p class="text-gray-400">University-level Finalist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Recognized as a finalist at the university level in the SAP Hackathon,
+                        demonstrating innovation and technical problem-solving skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                    Get In Touch
+                </span>
+            </h2>
+
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-xl text-gray-300 mb-12">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                    vision.
+                    Feel free to reach out!
+                </p>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
+                        <!-- Email -->
+                        <a href="mailto:akshd4114@gmail.com"
+                            class="contact-link group flex items-center gap-3 px-6 py-3 bg-cyber-blue/10 hover:bg-cyber-blue/20 rounded-lg transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-sm text-gray-400">Email</p>
+                                <p class="text-cyber-blue font-semibold">akshd4114@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="flex justify-center gap-6">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/akshdeep-singh-998017322/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link w-14 h-14 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/AKSHDEEPsingh0" target="_blank" rel="noopener noreferrer"
+                            class="social-link w-14 h-14 bg-gradient-to-br from-cyber-purple to-cyber-blue rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-cyber-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400">
+                &copy; 2026 Akshdeep Singh. Built with
+                <span class="text-cyber-blue">HTML</span>,
+                <span class="text-cyber-purple">Tailwind CSS</span>, and
+                <span class="text-cyber-blue">JavaScript</span>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

@@ -1,0 +1,515 @@
+/* ===================================
+   Custom Styles for Portfolio Website
+   Cyberpunk Lite Theme
+   =================================== */
+
+:root {
+    --cyber-blue: #00d4ff;
+    --cyber-purple: #b84dff;
+    --dark-bg: #0a0a0a;
+    --dark-card: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--cyber-blue), var(--cyber-purple));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--cyber-purple), var(--cyber-blue));
+}
+
+/* Animated Gradient Background */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+/* Hero Section Background Image with Crossfade Animation */
+#home {
+    position: relative;
+}
+
+/* First background image */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    z-index: 0;
+    animation: bgFadeInOut 8s ease-in-out infinite;
+}
+
+/* Second background image for crossfade */
+.bg-transition {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('nature-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: bgFadeInOut 8s ease-in-out infinite reverse;
+    filter: blur(5px) brightness(0.7);
+}
+
+/* Dark overlay for readability */
+#home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(10, 10, 10, 0.4) 0%,
+            rgba(10, 10, 10, 0.6) 50%,
+            rgba(10, 10, 10, 0.75) 100%);
+    z-index: 1;
+}
+
+#home>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* Crossfade animation */
+@keyframes bgFadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* About Section Background Image */
+#about {
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('nature-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: 0;
+    filter: blur(5px) brightness(0.7);
+}
+
+#about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(10, 10, 10, 0.6) 0%,
+            rgba(10, 10, 10, 0.65) 50%,
+            rgba(10, 10, 10, 0.7) 100%);
+    z-index: 1;
+}
+
+#about>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Glass Morphism Effect */
+.glass-card {
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Skill Tags */
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(184, 77, 255, 0.2));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--cyber-blue);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(184, 77, 255, 0.3));
+    border-color: var(--cyber-blue);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Skill Category Animation */
+.skill-category {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.skill-category:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skill-category:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skill-category:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skill-category:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project Cards */
+.project-card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+    border-color: var(--cyber-blue);
+}
+
+/* Tech Badges */
+.tech-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px currentColor;
+}
+
+/* Project Links */
+.project-link {
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    text-shadow: 0 0 10px currentColor;
+}
+
+/* Achievement Cards */
+.achievement-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.achievement-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.achievement-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+/* Contact Links */
+.contact-link {
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+/* Social Links */
+.social-link {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+/* Navigation Active State */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Glow Effect */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue), 0 0 30px var(--cyber-blue);
+    }
+
+    to {
+        text-shadow: 0 0 20px var(--cyber-purple), 0 0 30px var(--cyber-purple), 0 0 40px var(--cyber-purple);
+    }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .cyber-grid {
+        background-size: 30px 30px;
+    }
+
+    .glass-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Loading Animation for Project Cards */
+.project-card.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Selection Color */
+::selection {
+    background: var(--cyber-blue);
+    color: var(--dark-bg);
+}
+
+::-moz-selection {
+    background: var(--cyber-blue);
+    color: var(--dark-bg);
+}
+
+/* Focus Styles for Accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid var(--cyber-blue);
+    outline-offset: 2px;
+}
+
+/* Terminal Styles */
+.terminal-container {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
+}
+
+.terminal-body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cyber-blue) var(--dark-card);
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: var(--dark-card);
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: var(--cyber-blue);
+    border-radius: 4px;
+}
+
+#terminal-input {
+    caret-color: var(--cyber-blue);
+}
+
+#terminal-input:focus {
+    outline: none;
+}
+
+.terminal-cursor {
+    color: var(--cyber-blue);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.terminal-output-line {
+    margin-bottom: 0.5rem;
+}
+
+.terminal-command {
+    color: var(--cyber-blue);
+}
+
+.terminal-error {
+    color: #ff6b6b;
+}
+
+.terminal-success {
+    color: #51cf66;
+}
+
+.terminal-info {
+    color: var(--cyber-purple);
+}
+
+
+/* Smooth Transitions */
+* {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
